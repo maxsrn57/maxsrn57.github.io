@@ -192,118 +192,72 @@ a {
 }
 
 // ==========================================================================
-// Sezione "Su di me" — storytelling
+// Sezione "Su di me" — righe alternate stile storytelling
 // ==========================================================================
-.story-section {
-  max-width: 760px;
-  margin: 0 auto 50px;
-
-  p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-  }
+.about-story {
+  background-color: $color-light;
+  padding: 10px 0 20px;
 }
 
-.story-quote {
-  border-left: 4px solid $color-accent;
-  padding: 10px 20px;
-  margin: 40px auto 0;
-  max-width: 640px;
-  font-style: italic;
-  color: $color-primary;
-  background-color: $color-bg;
-  @include card-shadow;
-}
-
-// ==========================================================================
-// Sezione "Il mio percorso" — journey a tappe
-// ==========================================================================
-.journey-section {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.journey {
+.about-row {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px 16px;
-}
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 64px 24px;
 
-.journey-step {
-  flex: 1 1 200px;
-  max-width: 230px;
-  text-align: center;
-  position: relative;
-
-  &:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 32px;
-    left: calc(50% + 42px);
-    width: calc(100% - 84px);
-    height: 2px;
-    background-color: rgba($color-accent, 0.3);
+  &.reverse {
+    flex-direction: row-reverse;
   }
 
-  .journey-icon {
-    width: 64px;
-    height: 64px;
+  .about-row-text {
+    flex: 1 1 480px;
+
+    h2 {
+      color: $color-primary;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: $color-text;
+      max-width: 560px;
+    }
+  }
+
+  .about-row-icon {
+    flex: 0 0 auto;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     background-color: rgba($color-accent, 0.14);
     color: $color-primary;
-    font-size: 1.7rem;
+    font-size: 3.2rem;
     @include flex-center;
-    margin: 0 auto 16px;
-    position: relative;
-    z-index: 1;
   }
 
-  h3 {
-    color: $color-primary;
-    font-size: 1.05rem;
-    margin-bottom: 8px;
-  }
+  .about-row-media {
+    flex: 0 0 auto;
 
-  p {
-    font-size: 0.92rem;
-    color: $color-text;
-  }
+    img {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid $color-bg;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      transition: transform $transition-fast, box-shadow $transition-fast;
 
-  &.journey-current .journey-icon {
-    background-color: $color-primary;
-    color: #ffffff;
-  }
-}
-
-// ==========================================================================
-// Blocchi tematici "Su di me" (persona, obiettivi)
-// ==========================================================================
-.about-block {
-  max-width: 640px;
-  margin: 0 auto 50px;
-  text-align: center;
-
-  .about-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background-color: rgba($color-accent, 0.14);
-    color: $color-primary;
-    font-size: 1.5rem;
-    @include flex-center;
-    margin: 0 auto 16px;
-  }
-
-  h2 {
-    color: $color-primary;
-    margin-bottom: 12px;
-  }
-
-  p {
-    font-size: 1.02rem;
-    line-height: 1.7;
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+      }
+    }
   }
 }
 
@@ -453,6 +407,31 @@ a {
 // ==========================================================================
 // Responsive
 // ==========================================================================
+@media (max-width: 768px) {
+  .about-row,
+  .about-row.reverse {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+    gap: 24px;
+  }
+
+  .about-row .about-row-text p {
+    max-width: 100%;
+  }
+
+  .about-row .about-row-icon {
+    width: 96px;
+    height: 96px;
+    font-size: 2.4rem;
+  }
+
+  .about-row .about-row-media img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
 @media (max-width: 576px) {
   .hero {
     padding: 50px 16px;
@@ -464,7 +443,7 @@ a {
     height: 120px;
   }
 
-  .journey-step::after {
-    display: none;
+  .about-row .about-row-text h2 {
+    font-size: 1.9rem;
   }
 }
