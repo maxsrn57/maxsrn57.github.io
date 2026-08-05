@@ -213,13 +213,13 @@ a {
 }
 .project-card .project-thumb {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/9;
   object-fit: cover;
   display: block;
 }
 .project-card .project-thumb-code {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/9;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -251,14 +251,14 @@ a {
 
   .project-thumb {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
   }
 
   .project-thumb-code {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
     @include flex-center;
     background: linear-gradient(135deg, $color-primary, $color-accent);
     color: #ffffff;
