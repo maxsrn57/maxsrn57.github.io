@@ -116,35 +116,99 @@ a {
   color: #ffffff;
 }
 
-.cv-section {
-  margin-bottom: 40px;
+.cv-hero {
+  background-color: #f2f7f6;
+  padding: 70px 20px 50px;
 }
-.cv-section h2 {
+.cv-hero .cv-hero-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  margin-bottom: 28px;
+}
+.cv-hero h1 {
   color: #0f3d3e;
-  border-bottom: 3px solid #2a9d8f;
-  display: inline-block;
-  padding-bottom: 6px;
-  margin-bottom: 20px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 28px;
 }
 
-.timeline-item {
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  border-radius: 10px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.cv-content {
+  background-color: #f2f7f6;
+  padding-bottom: 10px;
 }
-.timeline-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+
+.cv-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 60px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 50px 24px 20px;
+  position: relative;
 }
-.timeline-item {
-  background-color: #ffffff;
-  padding: 20px;
-  margin-bottom: 16px;
+.cv-columns::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  bottom: 20px;
+  left: 50%;
+  width: 1px;
+  background-color: rgba(15, 61, 62, 0.15);
 }
-.timeline-item .timeline-date {
+
+.cv-block {
+  margin-bottom: 44px;
+}
+.cv-block h2 {
+  color: #0f3d3e;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.cv-block h3 {
+  color: #0f3d3e;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+.cv-block .cv-date {
   color: #2a9d8f;
   font-weight: 600;
   font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.cv-block p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #1c2b2a;
+  margin-bottom: 16px;
+}
+.cv-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cv-block ul li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #1c2b2a;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 8px;
+}
+.cv-block ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #2a9d8f;
 }
 
 .about-story {
@@ -361,6 +425,13 @@ a {
     width: 180px;
     height: 180px;
   }
+  .cv-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .cv-columns::before {
+    display: none;
+  }
 }
 @media (max-width: 576px) {
   .hero {
@@ -373,6 +444,9 @@ a {
   }
   .about-row .about-row-text h2 {
     font-size: 1.9rem;
+  }
+  .cv-hero h1 {
+    font-size: 1.8rem;
   }
 }
 
