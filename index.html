@@ -3,357 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GreenEarth | Progetti per un pianeta più verde</title>
-<style>
-  /* ===== Reset & variabili ===== */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+<title>Massimo Saracino | UX/UI Designer in formazione</title>
+<meta name="description" content="Portfolio personale di Massimo Saracino: da progettista tecnico a UX/UI Designer in formazione, tra design delle interfacce e sviluppo front-end.">
 
-  :root {
-    --green: #2e7d32;
-    --green-dark: #1b5e20;
-    --blue: #0277bd;
-    --bg-light: #f4f9f4;
-    --text-dark: #1c2b1c;
-  }
+<!-- Open Graph -->
+<meta property="og:title" content="Massimo Saracino | UX/UI Designer in formazione">
+<meta property="og:description" content="Portfolio personale: da progettista tecnico a UX/UI Designer in formazione, tra design delle interfacce e sviluppo front-end.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://maxsrn57.github.io/">
+<meta property="og:image" content="https://maxsrn57.github.io/favicon.svg">
 
-  body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: var(--text-dark);
-    line-height: 1.6;
-    background-color: var(--bg-light);
-  }
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 20px;
-  }
-
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--green-dark);
-  }
-
-  /* ===== Header ===== */
-  .site-header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-
-  .header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 20px;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: bold;
-    font-size: 1.3rem;
-    color: var(--green-dark);
-    text-decoration: none;
-  }
-
-  .main-nav {
-    display: flex;
-    gap: 24px;
-  }
-
-  .main-nav a {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
-    transition: color 0.2s ease;
-  }
-
-  .main-nav a:hover {
-    color: var(--green);
-  }
-
-  /* ===== Hero ===== */
-  .hero {
-    background: linear-gradient(rgba(0, 40, 20, 0.55), rgba(0, 40, 20, 0.55)),
-      url('https://picsum.photos/id/1015/1600/900') center/cover no-repeat;
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #ffffff;
-    padding: 20px;
-  }
-
-  .hero-content h1 {
-    font-size: 2.6rem;
-    margin-bottom: 16px;
-  }
-
-  .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 28px;
-  }
-
-  /* ===== Bottoni con animazione hover ===== */
-  .btn {
-    display: inline-block;
-    background-color: var(--green);
-    color: #ffffff;
-    padding: 14px 32px;
-    border: none;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-  }
-
-  .btn:hover {
-    background-color: var(--blue);
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-  }
-
-  /* ===== About ===== */
-  .about p {
-    max-width: 700px;
-    font-size: 1.05rem;
-  }
-
-  /* ===== Projects (CSS Grid) ===== */
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-  }
-
-  .project-card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-  }
-
-  .project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-
-  .project-card h3,
-  .project-card p {
-    padding: 0 18px;
-  }
-
-  .project-card h3 {
-    margin-top: 16px;
-    color: var(--green-dark);
-  }
-
-  .project-card p {
-    margin-bottom: 18px;
-    font-size: 0.95rem;
-  }
-
-  /* ===== Contact form (Flexbox) ===== */
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 500px;
-  }
-
-  .contact-form label {
-    font-weight: 600;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    padding: 12px;
-    border: 1px solid #cccccc;
-    border-radius: 6px;
-    font-family: inherit;
-    font-size: 1rem;
-  }
-
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    outline: none;
-    border-color: var(--green);
-  }
-
-  .contact-form .btn {
-    align-self: flex-start;
-    margin-top: 10px;
-  }
-
-  /* ===== Footer ===== */
-  .site-footer {
-    background-color: var(--green-dark);
-    color: #ffffff;
-    padding: 30px 20px;
-  }
-
-  .footer-inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 24px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .footer-contact p {
-    margin-bottom: 4px;
-    font-size: 0.95rem;
-  }
-
-  .socials {
-    display: flex;
-    gap: 18px;
-  }
-
-  .socials a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-
-  .socials a:hover {
-    text-decoration: underline;
-  }
-
-  /* ===== Responsive ===== */
-  @media (max-width: 700px) {
-    .header-inner {
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .main-nav {
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .hero-content h1 {
-      font-size: 1.9rem;
-    }
-
-    .footer-inner {
-      flex-direction: column;
-      text-align: center;
-      align-items: center;
-    }
-  }
-</style>
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- CSS personalizzato (compilato da Sass) -->
+<link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#" class="logo">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 21C7 21 3 17 3 12C3 7 7 3 12 3C17 3 21 7 21 12C16 12 12 16 12 21Z" fill="#2e7d32"/>
-        </svg>
-        <span>GreenEarth</span>
-      </a>
-      <nav class="main-nav">
-        <a href="#about">Chi Siamo</a>
-        <a href="#projects">I Nostri Progetti</a>
-        <a href="#contact">Contattaci</a>
-      </nav>
+  <!-- Navbar sticky -->
+  <nav class="navbar navbar-expand-md navbar-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Massimo Saracino</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Apri menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="sudime.html">Su di me</a></li>
+          <li class="nav-item"><a class="nav-link" href="progetti.html">Progetti</a></li>
+          <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contattami</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero text-center">
+    <div class="container">
+      <img src="Massimo%20Saracino.jpg" alt="Foto profilo di Massimo Saracino" class="avatar mb-3">
+      <h1>Ciao, sono Massimo Saracino</h1>
+      <p class="lead">Da progettista tecnico a UX/UI Designer in formazione: stesso obiettivo, nuovi strumenti — capire un problema e progettare esperienze chiare e centrate sulle persone.</p>
+      <div class="hero-cta">
+        <a href="progetti.html" class="btn btn-cta btn-light text-primary">I miei progetti</a>
+        <a href="sudime.html" class="btn btn-cta btn-outline-light">Il mio percorso</a>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Insieme, ridiamo vita al pianeta</h1>
-      <p>Progetti di riforestazione e pulizia degli oceani per un futuro sostenibile.</p>
-      <a href="#contact" class="btn">Unisciti a noi</a>
+  <!-- Intro breve -->
+  <section class="container my-5 text-center">
+    <p class="mx-auto" style="max-width: 700px;">
+      Dopo anni nella progettazione tecnica e industriale, sto seguendo il Corso di UX/UI Design di start2impact: user research, accessibilità, wireframing e prototipazione su Figma, e sviluppo front-end con HTML, CSS, Sass, Bootstrap e le basi di Git/GitHub.
+    </p>
+  </section>
+
+  <!-- Strumenti -->
+  <section class="container my-5">
+    <h2 class="text-center mb-3">I miei strumenti</h2>
+    <div class="tools-grid">
+      <div class="tool-item"><span class="tool-icon">🧱</span>HTML5</div>
+      <div class="tool-item"><span class="tool-icon">🎨</span>CSS3</div>
+      <div class="tool-item"><span class="tool-icon">🧩</span>Sass</div>
+      <div class="tool-item"><span class="tool-icon">🅱️</span>Bootstrap</div>
+      <div class="tool-item"><span class="tool-icon">🔧</span>Git &amp; GitHub</div>
+      <div class="tool-item"><span class="tool-icon">🎯</span>Figma</div>
+      <div class="tool-item"><span class="tool-icon">✏️</span>Illustrator</div>
     </div>
   </section>
 
-  <section id="about" class="about container">
-    <h2>Chi siamo</h2>
-    <p>GreenEarth è una startup a impatto ambientale nata per contrastare la deforestazione e l'inquinamento degli oceani. Lavoriamo con comunità locali in tutto il mondo per piantare alberi, ripulire le coste e restituire equilibrio agli ecosistemi. Ogni progetto che sosteniamo è misurabile, trasparente e pensato per generare un cambiamento duraturo.</p>
-  </section>
-
-  <section id="projects" class="projects container">
-    <h2>I nostri progetti</h2>
-    <div class="project-grid">
-
-      <article class="project-card">
-        <img src="https://picsum.photos/id/1043/600/400" alt="Riforestazione in Amazzonia">
-        <h3>Riforestazione Amazzonica</h3>
-        <p>Ripristino di aree deforestate con specie autoctone, in collaborazione con le comunità locali.</p>
-      </article>
-
-      <article class="project-card">
-        <img src="https://picsum.photos/id/1040/600/400" alt="Pulizia degli oceani">
-        <h3>Oceani Puliti</h3>
-        <p>Raccolta di plastica e rifiuti lungo le coste più colpite, per proteggere la fauna marina.</p>
-      </article>
-
-      <article class="project-card">
-        <img src="https://picsum.photos/id/1039/600/400" alt="Educazione ambientale">
-        <h3>Scuole Verdi</h3>
-        <p>Programmi di educazione ambientale nelle scuole per formare le nuove generazioni.</p>
-      </article>
-
+  <!-- Social -->
+  <section class="container my-5 text-center">
+    <h2 class="mb-3">Dove trovarmi</h2>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/massimo-saracino-5a5845227" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/maxsrn57" target="_blank" rel="noopener">GitHub</a>
     </div>
-  </section>
-
-  <section id="contact" class="contact container">
-    <h2>Contattaci</h2>
-    <form class="contact-form">
-      <label for="name">Nome</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Messaggio</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit" class="btn">Invia messaggio</button>
-    </form>
   </section>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-contact">
-        <p><strong>GreenEarth</strong></p>
-        <p>Via dei Platani 12, 00100 Roma, Italia</p>
-        <p>Email: info@greenearth.org</p>
-        <p>Tel: +39 06 1234 5678</p>
-        <p>&copy; 2026 GreenEarth. Tutti i diritti riservati.</p>
-      </div>
-      <div class="socials">
-        <a href="#" aria-label="Facebook">Facebook</a>
-        <a href="#" aria-label="Instagram">Instagram</a>
-        <a href="#" aria-label="LinkedIn">LinkedIn</a>
-      </div>
-    </div>
+    <p class="mb-0">&copy; 2026 Massimo Saracino. Sito realizzato con HTML, CSS, Sass e Bootstrap.</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
