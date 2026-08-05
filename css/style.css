@@ -200,7 +200,9 @@ a {
 
 .project-card {
   background-color: #ffffff;
-  padding: 26px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   border-radius: 10px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -208,6 +210,31 @@ a {
 .project-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+}
+.project-card .project-thumb {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+.project-card .project-thumb-code {
+  width: 100%;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: linear-gradient(135deg, #0f3d3e, #2a9d8f);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+}
+.project-card .project-body {
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 .project-card .project-tag {
   display: inline-block;
@@ -231,6 +258,7 @@ a {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  margin-top: auto;
 }
 .project-links a {
   font-weight: 600;

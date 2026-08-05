@@ -244,8 +244,35 @@ a {
 
 .project-card {
   background-color: $color-bg;
-  padding: 26px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   @include card-shadow;
+
+  .project-thumb {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .project-thumb-code {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    @include flex-center;
+    background: linear-gradient(135deg, $color-primary, $color-accent);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .project-body {
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
 
   .project-tag {
     display: inline-block;
@@ -272,6 +299,7 @@ a {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  margin-top: auto;
 
   a {
     font-weight: 600;
