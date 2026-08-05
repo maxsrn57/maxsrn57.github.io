@@ -1,11 +1,11 @@
 // ==========================================================================
 // Variabili
 // ==========================================================================
-$color-primary: #1d3557;
-$color-accent: #457b9d;
-$color-light: #f1faee;
+$color-primary: #0f3d3e;
+$color-accent: #2a9d8f;
+$color-light: #f2f7f6;
 $color-bg: #ffffff;
-$color-text: #2b2d42;
+$color-text: #1c2b2a;
 $radius: 10px;
 $transition-fast: 0.2s ease;
 
@@ -188,6 +188,114 @@ a {
     color: $color-accent;
     font-weight: 600;
     font-size: 0.9rem;
+  }
+}
+
+// ==========================================================================
+// Sezione "Su di me" — storytelling
+// ==========================================================================
+.story-section {
+  max-width: 760px;
+  margin: 0 auto 50px;
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+}
+
+.story-quote {
+  border-left: 4px solid $color-accent;
+  padding: 10px 20px;
+  margin: 30px 0;
+  font-style: italic;
+  color: $color-primary;
+  background-color: $color-bg;
+  @include card-shadow;
+}
+
+.tools-grid {
+  @include flex-center(30px);
+  flex-wrap: wrap;
+  margin-top: 20px;
+
+  .tool-item {
+    text-align: center;
+    font-weight: 600;
+    color: $color-primary;
+
+    .tool-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 6px;
+    }
+  }
+}
+
+// ==========================================================================
+// Sezione Progetti — CSS Grid
+// ==========================================================================
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.project-card {
+  background-color: $color-bg;
+  padding: 26px;
+  @include card-shadow;
+
+  .project-tag {
+    display: inline-block;
+    background-color: rgba($color-accent, 0.12);
+    color: $color-accent;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+
+  h3 {
+    color: $color-primary;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 18px;
+  }
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  a {
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid $color-primary;
+    color: $color-primary;
+    transition: background-color $transition-fast, color $transition-fast;
+
+    &:hover {
+      background-color: $color-primary;
+      color: #ffffff;
+    }
+
+    &.project-live {
+      background-color: $color-primary;
+      color: #ffffff;
+
+      &:hover {
+        background-color: $color-accent;
+        border-color: $color-accent;
+      }
+    }
   }
 }
 
