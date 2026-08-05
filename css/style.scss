@@ -225,9 +225,11 @@ a {
     color: $color-primary;
 
     .tool-icon {
-      font-size: 2rem;
+      width: 42px;
+      height: 42px;
       display: block;
-      margin-bottom: 6px;
+      margin: 0 auto 8px;
+      object-fit: contain;
     }
   }
 }
