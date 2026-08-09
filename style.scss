@@ -1,0 +1,503 @@
+// ==========================================================================
+// Variabili
+// ==========================================================================
+$color-primary: #0f3d3e;
+$color-accent: #2a9d8f;
+$color-light: #f2f7f6;
+$color-bg: #ffffff;
+$color-text: #1c2b2a;
+$radius: 10px;
+$transition-fast: 0.2s ease;
+
+// ==========================================================================
+// Mixin
+// ==========================================================================
+@mixin card-shadow {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border-radius: $radius;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+  }
+}
+
+@mixin flex-center($gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+// ==========================================================================
+// Base
+// ==========================================================================
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: $color-text;
+  background-color: $color-light;
+}
+
+a {
+  text-decoration: none;
+}
+
+// ==========================================================================
+// Navbar (sticky)
+// ==========================================================================
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background-color: $color-bg;
+
+  .navbar-brand {
+    font-weight: bold;
+    color: $color-primary !important;
+  }
+
+  .nav-link {
+    color: $color-text !important;
+    transition: color $transition-fast;
+
+    &:hover,
+    &.active {
+      color: $color-accent !important;
+    }
+  }
+}
+
+// ==========================================================================
+// Hero
+// ==========================================================================
+.hero {
+  background: linear-gradient(135deg, $color-primary, $color-accent);
+  color: #ffffff;
+  padding: 80px 20px;
+
+  .avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    object-fit: cover;
+  }
+
+  .hero-cta {
+    @include flex-center(16px);
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+}
+
+.btn-cta {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// ==========================================================================
+// Sezione social
+// ==========================================================================
+.social-links {
+  @include flex-center(20px);
+  flex-wrap: wrap;
+  margin-top: 20px;
+
+  a {
+    color: $color-primary;
+    font-weight: 600;
+    border: 2px solid $color-primary;
+    padding: 8px 20px;
+    border-radius: 30px;
+    transition: background-color $transition-fast, color $transition-fast;
+
+    &:hover {
+      background-color: $color-primary;
+      color: #ffffff;
+    }
+  }
+}
+
+// ==========================================================================
+// CV page
+// ==========================================================================
+.cv-hero {
+  background-color: $color-light;
+  padding: 70px 20px 50px;
+
+  .cv-hero-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid $color-bg;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    color: $color-primary;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 28px;
+  }
+}
+
+// ==========================================================================
+// Sezione "Su di me" — righe alternate stile storytelling
+// ==========================================================================
+.about-story {
+  background-color: $color-light;
+  padding: 10px 0 20px;
+}
+
+.about-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 64px 24px;
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .about-row-text {
+    flex: 1 1 480px;
+
+    h2 {
+      color: $color-primary;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: $color-text;
+      max-width: 560px;
+    }
+  }
+
+  .about-row-icon {
+    flex: 0 0 auto;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: rgba($color-accent, 0.14);
+    color: $color-primary;
+    font-size: 3.2rem;
+    @include flex-center;
+  }
+
+  .about-row-media {
+    flex: 0 0 auto;
+
+    img {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid $color-bg;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      transition: transform $transition-fast, box-shadow $transition-fast;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+      }
+    }
+  }
+}
+
+.tools-grid {
+  @include flex-center(30px);
+  flex-wrap: wrap;
+  margin-top: 20px;
+
+  .tool-item {
+    text-align: center;
+    font-weight: 600;
+    color: $color-primary;
+
+    .tool-icon {
+      width: 42px;
+      height: 42px;
+      display: block;
+      margin: 0 auto 8px;
+      object-fit: contain;
+    }
+  }
+}
+
+// ==========================================================================
+// Sezione Progetti — CSS Grid
+// ==========================================================================
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.project-card {
+  background-color: $color-bg;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  @include card-shadow;
+
+  .project-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+
+  .project-thumb-code {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    @include flex-center;
+    background: linear-gradient(135deg, $color-primary, $color-accent);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .project-body {
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .project-tag {
+    display: inline-block;
+    background-color: rgba($color-accent, 0.12);
+    color: $color-accent;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+
+  h3 {
+    color: $color-primary;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 18px;
+  }
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: auto;
+
+  a {
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid $color-primary;
+    color: $color-primary;
+    transition: background-color $transition-fast, color $transition-fast;
+
+    &:hover {
+      background-color: $color-primary;
+      color: #ffffff;
+    }
+
+    &.project-live {
+      background-color: $color-primary;
+      color: #ffffff;
+
+      &:hover {
+        background-color: $color-accent;
+        border-color: $color-accent;
+      }
+    }
+  }
+}
+
+// ==========================================================================
+// Case study progetti (pagine dedicate)
+// ==========================================================================
+.case-hero {
+  background: linear-gradient(135deg, $color-primary, $color-accent);
+  color: #ffffff;
+  padding: 60px 20px 50px;
+
+  .case-tag {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.18);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+}
+
+.case-cover {
+  width: 100%;
+  max-height: 460px;
+  object-fit: cover;
+  border-radius: $radius;
+  @include card-shadow;
+  margin-bottom: 50px;
+}
+
+.case-overview {
+  max-width: 720px;
+  margin: 0 auto 56px;
+
+  h2 {
+    color: $color-primary;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.75;
+  }
+}
+
+.case-detail {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1080px;
+  margin: 0 auto 56px;
+  flex-wrap: wrap;
+
+  img {
+    flex: 1 1 480px;
+    width: 100%;
+    border-radius: $radius;
+    @include card-shadow;
+  }
+
+  .case-detail-text {
+    flex: 1 1 320px;
+
+    h2 {
+      color: $color-primary;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+  }
+}
+
+.case-cta {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .case-detail {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+// ==========================================================================
+// Contact form
+// ==========================================================================
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+
+  .form-control {
+    border-radius: $radius;
+  }
+
+  .form-control:focus {
+    border-color: $color-accent;
+    box-shadow: 0 0 0 0.2rem rgba($color-accent, 0.25);
+  }
+}
+
+// ==========================================================================
+// Footer
+// ==========================================================================
+.site-footer {
+  background-color: $color-primary;
+  color: #ffffff;
+  padding: 24px 0;
+  text-align: center;
+  margin-top: 60px;
+}
+
+// ==========================================================================
+// Responsive
+// ==========================================================================
+@media (max-width: 768px) {
+  .about-row,
+  .about-row.reverse {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+    gap: 24px;
+  }
+
+  .about-row .about-row-text p {
+    max-width: 100%;
+  }
+
+  .about-row .about-row-icon {
+    width: 96px;
+    height: 96px;
+    font-size: 2.4rem;
+  }
+
+  .about-row .about-row-media img {
+    width: 180px;
+    height: 180px;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 50px 16px;
+    text-align: center;
+  }
+
+  .hero .avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .about-row .about-row-text h2 {
+    font-size: 1.9rem;
+  }
+
+  .cv-hero h1 {
+    font-size: 1.8rem;
+  }
+}
