@@ -20,7 +20,7 @@ assets/img/progetti/*.jpg (copertine dei progetti)
 
 ## Come pubblicare con GitHub Pages
 
-1. Repository già pubblicato: `maxsrn57.github.io`, live su `https://maxsrn57.github.io/`.
+1. Repository già pubblicato: `massimosaracino.github.io`, live su `https://massimosaracino.github.io/`.
 2. Carica (sovrascrivendo) i file modificati: `index.html`, `sudime.html`, `cv.html`, `progetti.html`, `css/style.css`, `css/style.scss`.
 3. Nel repository, dentro `assets/pdf` carica gli 11 PDF presenti in `assets/pdf` di questa cartella locale, e dentro `assets/img/progetti` le relative immagini di copertina (mantieni gli stessi nomi file, sono quelli linkati da `progetti.html`). Rimuovi `assets/pdf/02-intro-uxui-onboarding.pdf` e `assets/img/progetti/02-intro-uxui-onboarding.jpg` se già presenti: non sono più usati.
 
